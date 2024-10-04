@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ooo1dh Fan Website</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Dark background for modern look */
+            color: #f5f5f5;
+            scroll-behavior: smooth;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #ffffff; /* Changed to white */
+            text-shadow: 0 0 10px #ff0000; /* Changed glow effect to red */
+        }
+
+        p {
+            text-align: center;
+            font-size: 1em; /* Adjusted font size */
+            line-height: 1.5; /* Improved line spacing */
+        }
+
+        /* Smooth transitions */
+        * {
+            transition: all 0.3s ease;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff; /* Changed to white */
+        }
+
+        /* Header Section with Image */
+        header {
+            position: relative;
+            height: 200px; /* Decreased header height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            overflow: hidden;
+            margin-bottom: 0; /* Remove unwanted margin */
+            width: 100%; /* Fill the full width of the page */
+        }
+
+        header img {
+            width: 100%; /* Make image responsive */
+            height: auto;
+            object-fit: cover; /* Cover the header */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+        }
+
+        .header-content {
+            text-align: center;
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
+            transform: translateY(-20px);
+            backdrop-filter: blur(5px); /* Added blur effect */
+            padding: 10px; /* Adjusted padding for content */
+        }
+
+        .header-content h1 {
+            font-size: 2em; /* Decreased font size */
+            letter-spacing: 2px;
+        }
+
+        .header-content p {
+            font-size: 1em; /* Decreased font size */
+            margin: 10px 0; /* Adjusted margin */
+        }
+
+        .btn {
+            background-color: #ff0000; /* Changed buttons to red */
+            color: #f5f5f5; /* Button text color */
+            padding: 12px 30px; /* Adjusted padding */
+            border-radius: 30px;
+            font-size: 1em; /* Adjusted font size */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 10px; /* Added margin */
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.5);
+        }
+
+        /* Scroll Down Icon */
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #f5f5f5;
+            font-size: 1.5em; /* Adjusted font size */
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #1e1e2d;
+            position: sticky;
+            top: 0;
+            padding: 10px 0; /* Adjusted padding */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px; /* Adjusted margin */
+        }
+
+        nav ul li a {
+            font-size: 1em; /* Adjusted font size */
+            color: #f5f5f5;
+            position: relative;
+            padding: 5px 0; /* Added padding */
+        }
+
+        nav ul li a::after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 0;
+            background: #ff0000; /* Changed to red */
+            transition: width 0.3s;
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Sections */
+        section {
+            padding: 40px 20px; /* Adjusted padding */
+            text-align: center;
+            background-color: #1e1e2d;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+        }
+
+        section h2 {
+            font-size: 1.8em; /* Adjusted font size */
+            margin-bottom: 10px;
+        }
+
+        section p {
+            font-size: 1em; /* Adjusted font size */
+            line-height: 1.4; /* Improved line spacing */
+        }
+
+        /* Icon Styles */
+        .icon {
+            width: 80px; /* Adjusted icon size */
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            margin: 10px; /* Added margin */
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #12121b;
+            padding: 15px; /* Adjusted padding */
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em; /* Adjusted font size */
+            color: #f5f5f5;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2em; /* Adjusted font size */
+            }
+
+            .header-content p {
+                font-size: 1em; /* Adjusted font size */
+            }
+
+            section h2 {
+                font-size: 1.6em; /* Adjusted font size */
+            }
+
+            .btn {
+                padding: 10px 25px; /* Adjusted padding */
+                font-size: 0.9em; /* Adjusted font size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section with Image -->
+    <header id="home">
+        <img src="ooo1.jpg" alt="ooo1dh Header" />
+        <div class="header-content">
+            <h1>Welcome to ooo1dh's World</h1>
+            <p>Join a community of awesome fans and enjoy endless interactions!</p>
+            <a href="https://discord.gg/Ak6ZkjrjH" class="btn">Join the Discord</a>
+        </div>
+        <div class="scroll-down">↓</div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#discord">Discord</a></li>
+            <li><a href="#tiktok">TikTok</a></li>
+            <li><a href="#roblox">Roblox</a></li>
+            <li><a href="#footer">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About ooo1dh</h2>
+        <p>
+            OOO1DH is a remarkably kind content creator who genuinely values and treats his fans with love and respect.<br>
+            Known for his engaging and relatable content, he goes above and beyond to interact with his audience, responding to comments and celebrating their contributions.<br>
+            His positive influence fosters a sense of community, encouraging followers to express themselves and support one another.<br>
+            Through uplifting messages and regular Q&A sessions, he creates a welcoming environment where everyone feels appreciated and included.<br>
+            OOO1DH’s dedication to kindness and connection makes him a beloved figure among his fans, reminding them of the importance of compassion in the digital world.
+        </p>
+    </section>
+
+    <!-- Discord Section -->
+    <section id="discord">
+        <h2>Join the 24/24 Discord Community</h2>
+        <p>
+            Join us for constant communication and interaction in our Discord server!<br>
+        </p>
+        <a href="https://discord.gg/Ak6ZkjrjH" class="btn">Join the Discord</a>
+    </section>
+
+    <!-- TikTok Section -->
+    <section id="tiktok">
+        <h2>Follow on TikTok</h2>
+        <p>
+            Stay updated with the latest videos and fun content!<br>
+        </p>
+        <a href="https://www.tiktok.com/@ooo1dh" class="btn">Follow on TikTok</a>
+    </section>
+
+    <!-- Roblox Section -->
+    <section id="roblox">
+        <h2>Roblox</h2>
+        <p>
+            Join OOO1DH in exciting Roblox gameplay and adventures!<br>
+        </p>
+        <a href="https://www.roblox.com/users/2338568935/profile" class="btn">View ooo1's roblox profile</a>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p>© 2024 ooo1dh Fan Website | Developed by FSXStealth</p>
+    </footer>
+</body>
+</html>

@@ -6,6 +6,7 @@
     <title>ooo1dh Fan Website</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
     <style>
         /* General Styles */
         body {
@@ -16,6 +17,21 @@
             color: #f5f5f5;
             scroll-behavior: smooth;
             overflow-x: hidden; /* Prevent horizontal overflow */
+            position: relative;
+        }
+
+        /* Background Image */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('ooo1.PNG');
+            background-size: cover; /* Cover the entire viewport */
+            filter: blur(8px); /* Blur effect */
+            z-index: -1; /* Place behind all other content */
         }
 
         h1, h2 {
@@ -40,78 +56,6 @@
             color: #ffffff; /* Changed to white */
         }
 
-        /* Header Section with Image */
-        header {
-            display: flex;
-            align-items: center; /* Center content vertically */
-            justify-content: space-between; /* Space between header and image */
-            color: white;
-            margin-bottom: 0; /* Remove unwanted margin */
-            width: 100%; /* Fill the full width of the page */
-        }
-
-        header img {
-            width: 200%; /* Make image responsive */
-            height: auto;
-            object-fit: cover; /* Cover the header */
-            border-radius: 15px; /* Rounded corners */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
-        }
-
-        .header-content {
-            text-align: center;
-            animation: fadeIn 1s ease forwards;
-            opacity: 0;
-            transform: translateY(-20px);
-            backdrop-filter: blur(5px); /* Added blur effect */
-            padding: 10px; /* Adjusted padding for content */
-        }
-
-        .header-content h1 {
-            font-size: 2em; /* Decreased font size */
-            letter-spacing: 2px;
-        }
-
-        .header-content p {
-            font-size: 1em; /* Decreased font size */
-            margin: 10px 0; /* Adjusted margin */
-        }
-
-        .btn {
-            background-color: #ff0000; /* Changed buttons to red */
-            color: #f5f5f5; /* Button text color */
-            padding: 12px 30px; /* Adjusted padding */
-            border-radius: 30px;
-            font-size: 1em; /* Adjusted font size */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin: 10px; /* Added margin */
-        }
-
-        .btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.5);
-        }
-
-        /* Scroll Down Icon */
-        .scroll-down {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #f5f5f5;
-            font-size: 1.5em; /* Adjusted font size */
-            animation: bounce 1.5s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(10px);
-            }
-        }
-
         /* Navigation */
         nav {
             background-color: #1e1e2d;
@@ -119,6 +63,7 @@
             top: 0;
             padding: 10px 0; /* Adjusted padding */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1; /* Ensure navigation is above background */
         }
 
         nav ul {
@@ -158,7 +103,7 @@
         section {
             padding: 40px 20px; /* Adjusted padding */
             text-align: center;
-            background-color: #1e1e2d;
+            background-color: rgba(30, 30, 45, 0.9); /* Semi-transparent background */
             border-radius: 15px;
             margin: 20px auto;
             max-width: 800px;
@@ -177,16 +122,23 @@
             line-height: 1.4; /* Improved line spacing */
         }
 
-        /* Icon Styles */
-        .icon {
-            width: 80px; /* Adjusted icon size */
-            transition: transform 0.3s ease;
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff0000; /* Button background color */
+            color: #ffffff; /* Button text color */
+            font-size: 1em; /* Button font size */
             cursor: pointer;
-            margin: 10px; /* Added margin */
         }
 
-        .icon:hover {
-            transform: scale(1.1);
+        .btn i {
+            margin-right: 5px; /* Space between icon and text */
         }
 
         /* Footer */
@@ -204,43 +156,17 @@
 
         /* Media Queries for Responsive Design */
         @media (max-width: 768px) {
-            .header-content h1 {
-                font-size: 2em; /* Adjusted font size */
-            }
-
-            .header-content p {
-                font-size: 1em; /* Adjusted font size */
-            }
-
             section h2 {
                 font-size: 1.6em; /* Adjusted font size */
             }
 
-            .btn {
-                padding: 10px 25px; /* Adjusted padding */
-                font-size: 0.9em; /* Adjusted font size */
-            }
-
-            header {
-                flex-direction: column; /* Stack header content on smaller screens */
+            section p {
+                font-size: 1em; /* Adjusted font size */
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section with Image -->
-    <header id="home">
-        <div class="header-content">
-            <h1>Welcome to ooo1dh's fanmade Website</h1>
-            <p>Join a community of kind fans and enjoy endless interactions!</p>
-            <a href="https://discord.gg/Ak6ZkjrjH" class="btn">Join the Discord</a>
-        </div>
-        <img src="ooo1.PNG" alt="ooo1dh Header" />
-    </header>
-
-    <!-- Image next to Header -->
-    <img src="ooo12.jpg" alt="Your Image Description" style="display: block; margin: 20px auto; width: 200px; height: auto; border-radius: 10px;">
-
     <!-- Navigation -->
     <nav>
         <ul>
@@ -248,7 +174,7 @@
             <li><a href="#discord">Discord</a></li>
             <li><a href="#tiktok">TikTok</a></li>
             <li><a href="#roblox">Roblox</a></li>
-            <li><a href="#footer">CopyRight</a></li>
+            <li><a href="#footer">Contact</a></li>
         </ul>
     </nav>
 
@@ -264,21 +190,21 @@
     <section id="discord">
         <h2>Join the 0001dh Discord</h2>
         <p>Connect with other fans and join the conversation!</p>
-        <a href="https://discord.gg/Ak6ZkjrjH" class="btn">Join the Discord</a>
+        <a href="https://discord.gg/Ak6ZkjrjH" class="btn"><i class="fab fa-discord"></i>Join the Discord</a>
     </section>
 
     <!-- TikTok Section -->
     <section id="tiktok">
         <h2>Follow on TikTok</h2>
         <p>Check out some fun clips and moments!</p>
-        <a href="https://www.tiktok.com/@ooo1dh" class="btn">Follow ooo1dh</a>
+        <a href="https://www.tiktok.com/@ooo1dh" class="btn"><i class="fab fa-tiktok"></i>Follow ooo1dh</a>
     </section>
 
     <!-- Roblox Section -->
     <section id="roblox">
         <h2>Play Roblox with ooo1dh</h2>
         <p>Join in on the fun and play together!</p>
-        <a href="https://www.roblox.com/users/123456789" class="btn">Join Roblox</a>
+        <a href="https://www.roblox.com/users/123456789" class="btn"><i class="fab fa-roblox"></i>Join Roblox</a>
     </section>
 
     <!-- Footer Section -->

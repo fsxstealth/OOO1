@@ -42,13 +42,10 @@
 
         /* Header Section with Image */
         header {
-            position: relative;
-            height: 100px; /* Decreased header height */
             display: flex;
-            justify-content: center;
-            align-items: center;
+            align-items: center; /* Center content vertically */
+            justify-content: space-between; /* Space between header and image */
             color: white;
-            overflow: hidden;
             margin-bottom: 0; /* Remove unwanted margin */
             width: 100%; /* Fill the full width of the page */
         }
@@ -223,20 +220,26 @@
                 padding: 10px 25px; /* Adjusted padding */
                 font-size: 0.9em; /* Adjusted font size */
             }
+
+            header {
+                flex-direction: column; /* Stack header content on smaller screens */
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header Section with Image -->
     <header id="home">
-        <img src="ooo1.PNG" alt="ooo1dh Header" />
         <div class="header-content">
             <h1>Welcome to ooo1dh's fanmade Website</h1>
             <p>Join a community of kind fans and enjoy endless interactions!</p>
             <a href="https://discord.gg/Ak6ZkjrjH" class="btn">Join the Discord</a>
         </div>
-        <div class="scroll-down">↓</div>
+        <img src="ooo1.PNG" alt="ooo1dh Header" />
     </header>
+
+    <!-- Image next to Header -->
+    <img src="ooo12.jpg" alt="Your Image Description" style="display: block; margin: 20px auto; width: 200px; height: auto; border-radius: 10px;">
 
     <!-- Navigation -->
     <nav>
@@ -261,31 +264,27 @@
     <section id="discord">
         <h2>Join the 0001dh Discord</h2>
         <p>Connect with other fans and join the conversation!</p>
-        <a href="https://discord.gg/Ak6ZkjrjH" class="btn">Join Now</a>
+        <a href="https://discord.gg/Ak6ZkjrjH" class="btn">Join the Discord</a>
     </section>
 
     <!-- TikTok Section -->
     <section id="tiktok">
         <h2>Follow on TikTok</h2>
-        <p>Stay updated with the latest trends and fun content!</p>
-        <a href="https://www.tiktok.com/@ooo1rbx" target="_blank">
-            <img src="tiktok-icon.png" alt="TikTok" class="icon">
-        </a>
+        <p>Check out some fun clips and moments!</p>
+        <a href="https://www.tiktok.com/@ooo1dh" class="btn">Follow ooo1dh</a>
     </section>
 
     <!-- Roblox Section -->
     <section id="roblox">
-        <h2>Join ooo1dh on Roblox</h2>
-        <p>Join us for fun games and exciting adventures!</p>
-        <a href="https://roblox.com/users/257963538/profile" target="_blank">
-            <img src="roblox-icon.png" alt="Roblox" class="icon">
-        </a>
+        <h2>Play Roblox with ooo1dh</h2>
+        <p>Join in on the fun and play together!</p>
+        <a href="https://www.roblox.com/users/123456789" class="btn">Join Roblox</a>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer id="footer">
-        <p>&copy; 2024 ooo1dh Fan Website. All rights reserved.</p>
-        <p>            &copy; Developed by FSXStealth          </p>
+        <p>&copy; 2024 ooo1dh Fanmade Website. All rights reserved.</p>
+        <p>Website created by <strong>FSXstealth</strong></p>
     </footer>
 </body>
 </html>

@@ -43,7 +43,7 @@
         /* Header Section with Image */
         header {
             position: relative;
-            height: 200px; /* Decreased header height */
+            height: 400px; /* Increased header height */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -55,7 +55,7 @@
 
         header img {
             width: 100%; /* Make image responsive */
-            height: auto;
+            height: 100%; /* Set height to fill the header */
             object-fit: cover; /* Cover the header */
             border-radius: 15px; /* Rounded corners */
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
@@ -63,20 +63,22 @@
 
         .header-content {
             text-align: center;
-            animation: fadeIn 1s ease forwards;
-            opacity: 0;
-            transform: translateY(-20px);
+            position: absolute; /* Position text on top of the image */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             backdrop-filter: blur(5px); /* Added blur effect */
             padding: 10px; /* Adjusted padding for content */
         }
 
         .header-content h1 {
-            font-size: 2em; /* Decreased font size */
+            font-size: 2.5em; /* Increased font size */
             letter-spacing: 2px;
+            margin: 0; /* Remove margin */
         }
 
         .header-content p {
-            font-size: 1em; /* Decreased font size */
+            font-size: 1.2em; /* Increased font size */
             margin: 10px 0; /* Adjusted margin */
         }
 
@@ -192,6 +194,16 @@
             transform: scale(1.1);
         }
 
+        /* Fan Art Section */
+        .fan-art {
+            background-color: #1e1e2d; /* Consistent section background */
+            padding: 40px 20px; /* Adjusted padding */
+            margin: 20px auto; /* Adjusted margin */
+            border-radius: 15px;
+            max-width: 800px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+        }
+
         /* Footer */
         footer {
             background-color: #12121b;
@@ -231,7 +243,7 @@
     <header id="home">
         <img src="ooo1.PNG" alt="ooo1dh Header" />
         <div class="header-content">
-            <h1>Welcome to ooo1dh's fanmade Website</h1>
+            <h1>Welcome to ooo1dh's Fanmade Website</h1>
             <p>Join a community of kind fans and enjoy endless interactions!</p>
             <a href="https://discord.gg/Ak6ZkjrjH" class="btn">Join the Discord</a>
         </div>
@@ -245,6 +257,7 @@
             <li><a href="#discord">Discord</a></li>
             <li><a href="#tiktok">TikTok</a></li>
             <li><a href="#roblox">Roblox</a></li>
+            <li><a href="#fan-art">Fan Art</a></li> <!-- Added Fan Art link -->
             <li><a href="#footer">Contact</a></li>
         </ul>
     </nav>
@@ -253,41 +266,40 @@
     <section id="about">
         <h2>About ooo1dh</h2>
         <p>
-            OOO1DH is a remarkably kind content creator who genuinely values and treats his fans with love and respect.
-            Known for his engaging and relatable content, he goes above and beyond to interact with his audience, responding to comments and celebrating their contributions.<br>
-            Through uplifting messages and regular Q&A sessions, he creates a welcoming environment where everyone feels appreciated and included.<br>
+            OOO1DH is a remarkably kind and creative individual. He is Black/Mexican and has a love for Alfredo pasta. His cat, Mittens, adds joy to his life.
         </p>
     </section>
 
     <!-- Discord Section -->
     <section id="discord">
-        <h2>Join the 0001dh Discord</h2>
-        <p>Connect with other fans and join the conversation!</p>
-        <a href="https://discord.gg/Ak6ZkjrjH" class="btn">Join Now</a>
+        <h2>Join the Discord Community</h2>
+        <p>Connect with fellow fans and engage with OOO1DH directly!</p>
+        <a href="https://discord.gg/Ak6ZkjrjH" class="btn">Join the Discord</a>
     </section>
 
     <!-- TikTok Section -->
     <section id="tiktok">
         <h2>Follow on TikTok</h2>
-        <p>Stay updated with the latest trends and fun content!</p>
-        <a href="https://www.tiktok.com/@ooo1dh" target="_blank">
-            <img src="tiktok-icon.png" alt="TikTok" class="icon">
-        </a>
+        <p>Check out 0001dh's TikTok for exclusive content!</p>
+        <a href="https://www.tiktok.com/@ooo1dh" class="btn">Visit TikTok</a>
     </section>
 
     <!-- Roblox Section -->
     <section id="roblox">
-        <h2>Join ooo1dh on Roblox</h2>
-        <p>Join us for fun games and exciting adventures!</p>
-        <a href="https://roblox.com/users/257963538/profile" target="_blank">
-            <img src="roblox-icon.png" alt="Roblox" class="icon">
-        </a>
+        <h2>Play with OOO1DH on Roblox</h2>
+        <p>Join OOO1DH in his Roblox games for some fun!</p>
+        <a href="https://www.roblox.com/games/0001dh" class="btn">Join Roblox</a>
     </section>
 
-    <!-- Footer -->
+    <!-- Fan Art Section -->
+    <section id="fan-art" class="fan-art">
+        <h2>Fan Art</h2>
+        <p>No fan art posted yet.</p>
+    </section>
+
+    <!-- Footer Section -->
     <footer id="footer">
-        <p>&copy; 2024 ooo1dh Fan Website. All rights reserved.</p>
-        <p>            &copy; Developed by FSXStealth          </p>
+        <p>&copy; 2024 ooo1dh Fan Website | All rights reserved.</p>
     </footer>
 </body>
 </html>

@@ -241,7 +241,7 @@
     <section id="roblox">
         <h2>Play Roblox with ooo1dh</h2>
         <p>Join in on the fun and play together!</p>
-        <a href="https://www.roblox.com/users/123456789" class="btn"><i class="fab fa-roblox"></i>Join Roblox</a>
+        <a href="https://www.roblox.com/users/257963538/profile" class="btn"><i class="fab fa-roblox"></i>Join Roblox</a>
     </section>
 
     <!-- Fanart Section -->
@@ -272,7 +272,7 @@
             <div class="fanart-description">Fanart made by catskitty13</div>
             <div class="fanart-description">Fanart made by LeeTheBee</div>
         </div>
-        <button class="more-button" onclick="loadMore()">Load More Fanart</button>
+        <button class="more-button" onclick="loadMore()">More FanArts Will be added soon:3!</button>
     </section>
 
     <!-- Footer -->
@@ -281,32 +281,5 @@
         <p>    &copy; Created and developed by : FSXStealth </p>
     </footer>
 
-    <script>
-        function toggleDescription(img) {
-            const descriptions = document.querySelectorAll('.fanart-description');
-            const index = Array.from(document.querySelectorAll('.fanart')).indexOf(img);
-            const description = descriptions[index];
-
-            // Show description and start fade-out timer
-            description.style.display = 'block';
-            description.style.opacity = '1'; // Fully visible
-            setTimeout(() => {
-                description.style.opacity = '0'; // Start fading out
-                setTimeout(() => {
-                    description.style.display = 'none'; // Hide after fade out
-                }, 500); // Match the fade-out duration
-            }, 3000); // Show for 3 seconds
-        }
-
-        function loadMore() {
-            const gallery = document.querySelector('.fanart-gallery');
-            const newFanart = document.createElement('img');
-            newFanart.src = 'fanart4.webp'; // Example of new fanart
-            newFanart.alt = 'Fanart 4';
-            newFanart.className = 'fanart';
-            newFanart.onclick = function() { toggleDescription(newFanart); };
-            gallery.appendChild(newFanart);
-        }
-    </script>
 </body>
 </html>

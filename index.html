@@ -30,7 +30,7 @@
             height: 100%;
             background-image: url('ooo1.PNG');
             background-size: cover; /* Cover the entire viewport */
-            filter: blur(7px); /* Blur effect */
+            filter: blur(8px); /* Blur effect */
             z-index: -1; /* Place behind all other content */
         }
 
@@ -141,6 +141,42 @@
             margin-right: 5px; /* Space between icon and text */
         }
 
+        /* Fanart Styles */
+        .fanart-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px; /* Space between images */
+            margin: 0 auto;
+        }
+
+        .fanart {
+            max-width: 150px; /* Reduced maximum width for fanart images */
+            border-radius: 10px; /* Rounded corners for images */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
+        .fanart-description {
+            display: none; /* Hidden by default */
+            margin-top: 5px; /* Space above the description */
+            font-size: 0.9em; /* Smaller font for descriptions */
+            color: #ffcc00; /* Changed description color */
+            opacity: 1; /* Fully visible initially */
+            transition: opacity 0.5s ease; /* Smooth opacity transition */
+        }
+
+        .more-button {
+            margin-top: 20px; /* Space above the button */
+            background-color: red; /* Button color changed to red */
+            padding: 10px 20px; /* Button padding */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            color: #ffffff; /* Text color */
+            cursor: pointer; /* Pointer cursor */
+            font-size: 1em; /* Button font size */
+        }
+
         /* Footer */
         footer {
             background-color: #12121b;
@@ -174,7 +210,8 @@
             <li><a href="#discord">Discord</a></li>
             <li><a href="#tiktok">TikTok</a></li>
             <li><a href="#roblox">Roblox</a></li>
-            <li><a href="#footer">Copyright</a></li>
+            <li><a href="#fanart">Fanart</a></li> <!-- Link to Fanart Section -->
+            <li><a href="#copyright">Creator</a></li>
         </ul>
     </nav>
 
@@ -197,7 +234,7 @@
     <section id="tiktok">
         <h2>Follow on TikTok</h2>
         <p>Check out some fun clips and moments!</p>
-        <a href="https://www.tiktok.com/@ooo1dh" class="btn"><i class="fab fa-tiktok"></i>Follow ooo1dh</a>
+        <a href="https://www.tiktok.com/@ooo1rbx" class="btn"><i class="fab fa-tiktok"></i>Follow ooo1dh</a>
     </section>
 
     <!-- Roblox Section -->
@@ -207,10 +244,69 @@
         <a href="https://www.roblox.com/users/123456789" class="btn"><i class="fab fa-roblox"></i>Join Roblox</a>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Fanart Section -->
+    <section id="fanart">
+        <h2>Fanart Gallery</h2>
+        <p>Check out some amazing fanart!</p>
+        <div class="fanart-gallery">
+            <img src="fanart1.webp" alt="Fanart 1" class="fanart" onclick="toggleDescription(this)">
+            <img src="fanart2.webp" alt="Fanart 2" class="fanart" onclick="toggleDescription(this)">
+            <img src="fanart3.webp" alt="Fanart 3" class="fanart" onclick="toggleDescription(this)">
+            <img src="fanart4.webp" alt="Fanart 4" class="fanart" onclick="toggleDescription(this)">
+            <img src="fanart5.webp" alt="Fanart 5" class="fanart" onclick="toggleDescription(this)">
+            <img src="fanart6.webp" alt="Fanart 6" class="fanart" onclick="toggleDescription(this)">
+            <img src="fanart7.webp" alt="Fanart 7" class="fanart" onclick="toggleDescription(this)">
+            <img src="fanart8.webp" alt="Fanart 8" class="fanart" onclick="toggleDescription(this)">
+            <img src="fanart9.webp" alt="Fanart 9" class="fanart" onclick="toggleDescription(this)">
+            <img src="fanart10.webp" alt="Fanart 10" class="fanart" onclick="toggleDescription(this)">
+        </div>
+        <div id="fanart-descriptions">
+            <div class="fanart-description">Fanart made by Bones</div>
+            <div class="fanart-description">Fanart made by LeeThebee</div>
+            <div class="fanart-description">Fanart made by LeeTheBee</div>
+            <div class="fanart-description">Fanart made by LeeThebee</div>
+            <div class="fanart-description">Fanart made by Leon</div>
+            <div class="fanart-description">Fanart made by niik.i</div>
+            <div class="fanart-description">Fanart made by LeeTheBee</div>
+            <div class="fanart-description">Fanart made by vity</div>
+            <div class="fanart-description">Fanart made by catskitty13</div>
+            <div class="fanart-description">Fanart made by LeeTheBee</div>
+        </div>
+        <button class="more-button" onclick="loadMore()">Load More Fanart</button>
+    </section>
+
+    <!-- Footer -->
     <footer id="footer">
-        <p>&copy; 2024 ooo1dh Fanmade Website. All rights reserved.</p>
-        <p>Website created by <strong>FSXstealth</strong></p>
+        <p>&copy; 2024 ooo1dh Fan Website. All rights reserved.</p>
+        <p>    &copy; Created and developed by : FSXStealth </p>
     </footer>
+
+    <script>
+        function toggleDescription(img) {
+            const descriptions = document.querySelectorAll('.fanart-description');
+            const index = Array.from(document.querySelectorAll('.fanart')).indexOf(img);
+            const description = descriptions[index];
+
+            // Show description and start fade-out timer
+            description.style.display = 'block';
+            description.style.opacity = '1'; // Fully visible
+            setTimeout(() => {
+                description.style.opacity = '0'; // Start fading out
+                setTimeout(() => {
+                    description.style.display = 'none'; // Hide after fade out
+                }, 500); // Match the fade-out duration
+            }, 3000); // Show for 3 seconds
+        }
+
+        function loadMore() {
+            const gallery = document.querySelector('.fanart-gallery');
+            const newFanart = document.createElement('img');
+            newFanart.src = 'fanart4.webp'; // Example of new fanart
+            newFanart.alt = 'Fanart 4';
+            newFanart.className = 'fanart';
+            newFanart.onclick = function() { toggleDescription(newFanart); };
+            gallery.appendChild(newFanart);
+        }
+    </script>
 </body>
 </html>

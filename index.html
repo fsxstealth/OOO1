@@ -13,11 +13,10 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212; /* Dark background for modern look */
+            background-color: #121212;
             color: #f5f5f5;
             scroll-behavior: smooth;
-            overflow-x: hidden; /* Prevent horizontal overflow */
-            position: relative;
+            overflow-x: hidden;
         }
 
         /* Background Image */
@@ -29,21 +28,21 @@
             width: 100%;
             height: 100%;
             background-image: url('ooo1.PNG');
-            background-size: cover; /* Cover the entire viewport */
-            filter: blur(8px); /* Blur effect */
-            z-index: -1; /* Place behind all other content */
+            background-size: cover;
+            filter: blur(8px);
+            z-index: -1;
         }
 
         h1, h2 {
             text-align: center;
-            color: #ffffff; /* Changed to white */
-            text-shadow: 0 0 10px #ff0000; /* Changed glow effect to red */
+            color: #ffffff;
+            text-shadow: 0 0 10px #ff0000;
         }
 
         p {
             text-align: center;
-            font-size: 1em; /* Adjusted font size */
-            line-height: 1.5; /* Improved line spacing */
+            font-size: 1em;
+            line-height: 1.5;
         }
 
         /* Smooth transitions */
@@ -53,7 +52,7 @@
 
         a {
             text-decoration: none;
-            color: #ffffff; /* Changed to white */
+            color: #ffffff;
         }
 
         /* Navigation */
@@ -61,9 +60,9 @@
             background-color: #1e1e2d;
             position: sticky;
             top: 0;
-            padding: 10px 0; /* Adjusted padding */
+            padding: 10px 0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            z-index: 1; /* Ensure navigation is above background */
+            z-index: 1;
         }
 
         nav ul {
@@ -72,14 +71,14 @@
         }
 
         nav ul li {
-            margin: 0 15px; /* Adjusted margin */
+            margin: 0 15px;
         }
 
         nav ul li a {
-            font-size: 1em; /* Adjusted font size */
+            font-size: 1em;
             color: #f5f5f5;
             position: relative;
-            padding: 5px 0; /* Added padding */
+            padding: 5px 0;
         }
 
         nav ul li a::after {
@@ -87,7 +86,7 @@
             display: block;
             height: 2px;
             width: 0;
-            background: #ff0000; /* Changed to red */
+            background: #ff0000;
             transition: width 0.3s;
             position: absolute;
             left: 50%;
@@ -101,25 +100,25 @@
 
         /* Sections */
         section {
-            padding: 40px 20px; /* Adjusted padding */
+            padding: 40px 20px;
             text-align: center;
-            background-color: rgba(30, 30, 45, 0.9); /* Semi-transparent background */
+            background-color: rgba(30, 30, 45, 0.9);
             border-radius: 15px;
             margin: 20px auto;
             max-width: 800px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
         section h2 {
-            font-size: 1.8em; /* Adjusted font size */
+            font-size: 1.8em;
             margin-bottom: 10px;
         }
 
         section p {
-            font-size: 1em; /* Adjusted font size */
-            line-height: 1.4; /* Improved line spacing */
+            font-size: 1em;
+            line-height: 1.4;
         }
 
         /* Button Styles */
@@ -131,14 +130,14 @@
             margin: 10px;
             border: none;
             border-radius: 5px;
-            background-color: #ff0000; /* Button background color */
-            color: #ffffff; /* Button text color */
-            font-size: 1em; /* Button font size */
+            background-color: #ff0000;
+            color: #ffffff;
+            font-size: 1em;
             cursor: pointer;
         }
 
         .btn i {
-            margin-right: 5px; /* Space between icon and text */
+            margin-right: 5px;
         }
 
         /* Fanart Styles */
@@ -146,58 +145,72 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 10px; /* Space between images */
+            gap: 10px;
             margin: 0 auto;
         }
 
         .fanart {
-            max-width: 150px; /* Reduced maximum width for fanart images */
-            border-radius: 10px; /* Rounded corners for images */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
-            cursor: pointer; /* Pointer cursor on hover */
+            max-width: 150px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
 
-        .fanart-description {
-            display: none; /* Hidden by default */
-            margin-top: 5px; /* Space above the description */
-            font-size: 0.9em; /* Smaller font for descriptions */
-            color: #ffcc00; /* Changed description color */
-            opacity: 1; /* Fully visible initially */
-            transition: opacity 0.5s ease; /* Smooth opacity transition */
+        .fanart:hover {
+            transform: scale(1.05);
         }
 
-        .more-button {
-            margin-top: 20px; /* Space above the button */
-            background-color: red; /* Button color changed to red */
-            padding: 10px 20px; /* Button padding */
-            border: none; /* No border */
-            border-radius: 5px; /* Rounded corners */
-            color: #ffffff; /* Text color */
-            cursor: pointer; /* Pointer cursor */
-            font-size: 1em; /* Button font size */
+        /* Full Image Modal */
+        #fanartModal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        #fanartModal img {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        #fanartModal .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
         }
 
         /* Footer */
         footer {
             background-color: #12121b;
-            padding: 15px; /* Adjusted padding */
+            padding: 15px;
             text-align: center;
         }
 
         footer p {
             margin: 0;
-            font-size: 0.9em; /* Adjusted font size */
+            font-size: 0.9em;
             color: #f5f5f5;
         }
 
-        /* Media Queries for Responsive Design */
         @media (max-width: 768px) {
             section h2 {
-                font-size: 1.6em; /* Adjusted font size */
+                font-size: 1.6em;
             }
 
             section p {
-                font-size: 1em; /* Adjusted font size */
+                font-size: 1em;
             }
         }
     </style>
@@ -210,7 +223,7 @@
             <li><a href="#discord">Discord</a></li>
             <li><a href="#tiktok">TikTok</a></li>
             <li><a href="#roblox">Roblox</a></li>
-            <li><a href="#fanart">Fanart</a></li> <!-- Link to Fanart Section -->
+            <li><a href="#fanart">Fanart</a></li>
             <li><a href="#copyright">Creator</a></li>
         </ul>
     </nav>
@@ -218,9 +231,7 @@
     <!-- About Section -->
     <section id="about">
         <h2>About ooo1dh</h2>
-        <p>
-            ooo1, a proud Mexican and content creator known for his expertise in the Roblox game Evade, boasting over 2,500 subscribers. He has a deep love for Alfredo pasta and shares his life with his adorable cat, Mittens, who brings joy and laughter with her playful antics.<br>
-        </p>
+        <p>ooo1, a proud Mexican and content creator known for his expertise in the Roblox game Evade, boasting over 2,500 subscribers...</p>
     </section>
 
     <!-- Discord Section -->
@@ -246,39 +257,56 @@
 
     <!-- Fanart Section -->
     <section id="fanart">
-        <h2>Fanart section</h2>
+        <h2>Fanart Section</h2>
         <p>Here you will find some fanart of OOO1 :)</p>
         <div class="fanart-gallery">
-            <img src="fanart1.webp" alt="Fanart 1" class="fanart" onclick="toggleDescription(this)">
-            <img src="fanart2.webp" alt="Fanart 2" class="fanart" onclick="toggleDescription(this)">
-            <img src="fanart3.webp" alt="Fanart 3" class="fanart" onclick="toggleDescription(this)">
-            <img src="fanart4.webp" alt="Fanart 4" class="fanart" onclick="toggleDescription(this)">
-            <img src="fanart6.webp" alt="Fanart 6" class="fanart" onclick="toggleDescription(this)">
-            <img src="fanart7.webp" alt="Fanart 7" class="fanart" onclick="toggleDescription(this)">
-            <img src="fanart8.webp" alt="Fanart 8" class="fanart" onclick="toggleDescription(this)">
-            <img src="fanart9.webp" alt="Fanart 9" class="fanart" onclick="toggleDescription(this)">
-            <img src="fanart10.webp" alt="Fanart 10" class="fanart" onclick="toggleDescription(this)">
-            <img src="fanart11.png" alt="Fanart 10" class="fanart" onclick="toggleDescription(this)">
+            <img src="fanart1.webp" alt="Fanart 1" class="fanart" onclick="openModal(this)">
+            <img src="fanart2.webp" alt="Fanart 2" class="fanart" onclick="openModal(this)">
+            <img src="fanart3.webp" alt="Fanart 3" class="fanart" onclick="openModal(this)">
+            <img src="fanart4.webp" alt="Fanart 4" class="fanart" onclick="openModal(this)">
+            <img src="fanart6.webp" alt="Fanart 6" class="fanart" onclick="openModal(this)">
+            <img src="fanart7.webp" alt="Fanart 7" class="fanart" onclick="openModal(this))">
+            <img src="fanart8.webp" alt="Fanart 8" class="fanart" onclick="openModal(this)">
+            <img src="fanart9.webp" alt="Fanart 9" class="fanart" onclick="openModal(this)">
+            <img src="fanart10.webp" alt="Fanart 10" class="fanart" onclick="openModal(this)">
+            <img src="fanart11.png" alt="Fanart 10" class="fanart" onclick="openModal(this)">
+            <!-- Add more fanart images as needed -->
         </div>
-        <div id="fanart-descriptions">
-            <div class="fanart-description">Fanart made by Bones</div>
-            <div class="fanart-description">Fanart made by LeeThebee</div>
-            <div class="fanart-description">Fanart made by LeeTheBee</div>
-            <div class="fanart-description">Fanart made by LeeThebee</div>
-            <div class="fanart-description">Fanart made by niik.i</div>
-            <div class="fanart-description">Fanart made by LeeTheBee</div>
-            <div class="fanart-description">Fanart made by vity</div>
-            <div class="fanart-description">Fanart made by catskitty13</div>
-            <div class="fanart-description">Fanart made by LeeTheBee</div>
-        </div>
-        <button class="more-button" onclick="loadMore()">More FanArts Will be added soon:3!</button>
     </section>
 
+    <!-- Fanart Modal -->
+    <div id="fanartModal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImg" src="" alt="Full-size Fanart">
+    </div>
+
     <!-- Footer -->
-    <footer id="footer">
-        <p>&copy; 2024 ooo1dh Fan Website. All rights reserved.</p>
-        <p>     Created and developed by  FSXStealth </p>
+    <footer id="copyright">
+        <p>© 2024 FSXStealth. All rights reserved.</p>
     </footer>
 
+    <script>
+        // Function to open the modal and display the clicked image
+        function openModal(img) {
+            const modal = document.getElementById('fanartModal');
+            const modalImg = document.getElementById('modalImg');
+            modal.style.display = 'block';
+            modalImg.src = img.src; // Use the clicked image source
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            const modal = document.getElementById('fanartModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside the image
+        window.onclick = function(event) {
+            const modal = document.getElementById('fanartModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
